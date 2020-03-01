@@ -76,7 +76,6 @@ def showChances(chances):
 		# print("  /     |   ")
 		# print(" |      O   ")
 		# print(" |     /|\  ")
-		# print(" |      |   ")
 		# print(" |     / \  ")
 		# print(" |          ")
 
