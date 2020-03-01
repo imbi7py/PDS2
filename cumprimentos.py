@@ -5,7 +5,7 @@ try:
 	elif hora < 12:
 		print("Bom Dia.")
 	elif hora < 17:
-		print("Boa Tarde.)
+		print("Boa Tarde." )
 	elif hora < 23:
 		print("Boa Noite.")
 except:
