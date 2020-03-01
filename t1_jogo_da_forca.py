@@ -9,11 +9,11 @@ import os
 	Description: prints the result of the game
 	Usage: use when the game is finished
 '''
-def fimGame(situation):
+def fimGame(situation, word):
 	if situation:
-		print("Jogo Terminou! Voce Ganhou")
+		print("Jogo Terminou. Voce Ganhou! A palavra era: {}".format(word))
 	else:
-		print("Jogo Terminou! Voce Perdeu")
+		print("Jogo Terminou. Voce Perdeu! A palavra era: {}".format(word))
 
 '''
 	Function - header
@@ -52,6 +52,33 @@ def showChutes(letrasChutadas):
 '''
 def showChances(chances):
 	print("Chances: {}".format(chances))
+
+	forca = "    ____       \n" \
+			"  /     |      \n" \
+			" |      {}     \n" \
+			" |     {}{}{}  \n" \
+			" |     {} {}   \n" \
+			" |             \n"
+	
+	if (chances == 5):
+		print(forca.format("", "", "", "", "", ""))
+	if (chances == 4):
+		print(forca.format("O", " ", "|", "", "", ""))
+	if (chances == 3):
+		print(forca.format("O", "/", "|", "", "", ""))
+	if (chances == 2):
+		print(forca.format("O", "/", "|", "\ ", "", ""))
+	if (chances == 1):
+		print(forca.format("O", "/", "|", "\ ", "/", ""))
+	if (chances == 0):
+		print(forca.format("O", "/", "|", "\ ", "/", "\ "))
+		# print("    ____    ")
+		# print("  /     |   ")
+		# print(" |      O   ")
+		# print(" |     /|\  ")
+		# print(" |      |   ")
+		# print(" |     / \  ")
+		# print(" |          ")
 
 '''
 	Function - showDiscovered
@@ -117,7 +144,7 @@ def startGame(word):
 			# just lost a chance when letter is not in the word and the user didn't try the letter before
 			if letter not in word:
 				chances -= 1
-	fimGame(resultGame)
+	fimGame(resultGame, word)
 
 '''
 	Function - startGame
